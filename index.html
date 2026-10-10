@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Talatinigan — The English Dictionary</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;1,400&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand" data-view="dictionary">
+    <span><b>TALATINIGAN</b><small>THE ENGLISH DICTIONARY</small></span>
+  </div>
+  <nav aria-label="Main">
+    <button data-view="dictionary" class="on">Dictionary</button>
+    <button data-view="favorites">Favorites</button>
+    <button data-view="history">History</button>
+    <button data-view="quiz">Vocabulary Quiz</button>
+    <button data-view="settings">Settings</button>
+    <button class="toggle" id="themeToggle" aria-label="Toggle dark mode">
+      <span class="t-icon">☀</span><i></i><span class="t-icon">☾</span>
+    </button>
+  </nav>
+</header>
+
+<main>
+  <!-- Dictionary View -->
+  <section id="v-dictionary" data-v>
+    <div class="hero">
+      <div class="eyebrow">A word, well understood</div>
+      <h1>Find the right words.</h1>
+      <p>Clear definitions. Natural examples. A little more understanding every day.</p>
+    </div>
+
+    <form class="search" id="form" role="search" autocomplete="off">
+      <div class="sbox">
+        <input id="q" type="text" placeholder="Search any English word (e.g. hello, serendipity)..." aria-label="Search word" autocapitalize="off" spellcheck="false">
+        <button class="go" id="go" aria-label="Search" type="submit">Search</button>
+      </div>
+    </form>
+
+    <div class="try">
+      <div class="eyebrow">Try a word</div>
+      <button class="chip" data-w="hello">hello</button>
+      <button class="chip" data-w="serendipity">serendipity</button>
+      <button class="chip" data-w="resilient">resilient</button>
+      <button class="chip" data-w="ephemeral">ephemeral</button>
+    </div>
+
+    <div class="grid">
+      <div id="main-card"></div>
+      <aside class="card" aria-label="Your vocabulary">
+        <h2>Your vocabulary</h2>
+        <button class="row" data-view="history">
+          <span>Recently viewed</span>
+          <span><b id="c-hist">0</b> →</span>
+        </button>
+        <button class="row" data-view="favorites">
+          <span>Saved words</span>
+          <span><b id="c-fav">0</b> →</span>
+        </button>
+        <div class="row" style="border:0;padding-bottom:0">
+          <span>Words explored this week</span>
+          <span id="c-week">0 / 15</span>
+        </div>
+        <div class="bar"><i id="c-bar" style="width:0"></i></div>
+        <p class="small">Small steps. Bigger vocabulary.</p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Favorites View -->
+  <section id="v-favorites" data-v hidden>
+    <div class="pghead left">
+      <div class="eyebrow">Your saved vocabulary</div>
+      <h1>Favorites</h1>
+      <p>Words you've kept. Open one to read it again, or test yourself in the quiz.</p>
+    </div>
+    <div id="fav-list"></div>
+  </section>
+
+  <!-- History View -->
+  <section id="v-history" data-v hidden>
+    <div class="pghead left">
+      <div class="headrow">
+        <div>
+          <h1>History</h1>
+          <p id="hist-note">Words you search for will appear here.</p>
+        </div>
+        <button class="btn danger" id="clear-hist">Clear history</button>
+      </div>
+    </div>
+    <div id="hist-list"></div>
+  </section>
+
+  <!-- Quiz View -->
+  <section id="v-quiz" data-v hidden>
+    <div class="pghead c">
+      <div class="eyebrow">Practice what you've learned</div>
+      <h1>Vocabulary Quiz</h1>
+    </div>
+    <div class="quiz" id="quiz"></div>
+  </section>
+
+  <!-- Settings View -->
+  <section id="v-settings" data-v hidden>
+    <div class="pghead left">
+      <div class="eyebrow">Theme and preferences</div>
+      <h1>Settings</h1>
+    </div>
+    <div class="card set">
+      <div class="srow">
+        <div><b>Appearance</b><span class="small">Choose a light paper theme or a dark night theme.</span></div>
+        <div class="seg">
+          <button data-theme-opt="light">Light</button>
+          <button data-theme-opt="dark">Dark</button>
+        </div>
+      </div>
+      <div class="srow">
+        <div><b>Weekly goal</b><span class="small">How many new words you'd like to explore each week.</span></div>
+        <div class="step">
+          <button class="icon-btn ring" id="g-dn">−</button>
+          <span id="g-val">15</span>
+          <button class="icon-btn ring" id="g-up">+</button>
+        </div>
+      </div>
+      <div class="srow">
+        <div><b>Your data</b><span class="small" id="data-note"></span></div>
+        <div class="btns">
+          <button class="btn danger" id="s-clear-hist">Clear history</button>
+          <button class="btn danger" id="s-clear-fav">Clear favorites</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="toast" id="toast" role="status"></div>
+<script src="script.js"></script>
+</body>
+</html>

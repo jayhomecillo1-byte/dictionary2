@@ -1,0 +1,73 @@
+{
+  "word": "hello",
+  "entries": [
+    {
+      "language": {
+        "code": "en",
+        "name": "English"
+      },
+      "partOfSpeech": "interjection",
+      "pronunciations": [
+        {
+          "type": "IPA",
+          "text": "/həˈloʊ/",
+          "tags": ["General American"]
+        },
+        {
+          "type": "IPA",
+          "text": "/hɛˈləʊ/",
+          "tags": ["Received Pronunciation"]
+        }
+      ],
+      "senses": [
+        {
+          "definition": "A greeting said when meeting someone or acknowledging someone's arrival or presence.",
+          "tags": ["greeting"],
+          "examples": [
+            "Hello, everyone."
+          ],
+          "synonyms": [
+            "greetings",
+            "hi",
+            "howdy"
+          ]
+        },
+        {
+          "definition": "A greeting used when answering the telephone.",
+          "tags": ["telephony"],
+          "examples": [
+            "Hello? Yes, speaking."
+          ]
+        }
+      ],
+      "source": {
+        "url": "https://en.wiktionary.org/wiki/hello"
+      }
+    },
+    {
+      "language": {
+        "code": "en",
+        "name": "English"
+      },
+      "partOfSpeech": "noun",
+      "pronunciations": [
+        {
+          "type": "IPA",
+          "text": "/həˈloʊ/",
+          "tags": ["General American"]
+        }
+      ],
+      "senses": [
+        {
+          "definition": "An utterance of \"hello\"; a greeting.",
+          "examples": [
+            "She gave me a warm hello when I walked in."
+          ]
+        }
+      ],
+      "source": {
+        "url": "https://en.wiktionary.org/wiki/hello"
+      }
+    }
+  ]
+}
